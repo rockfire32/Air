@@ -4,7 +4,7 @@ CXXFLAGS=-Wall -Wextra -pedantic -O3 -m64
 LIBS    = `pkg-config --libs sdl2 SDL2_image`
 VPATH   = src/
 INCLUDE = -Iinclude
-TARGETS = Logics_core.o
+TARGETS = Logics_core.o Logics_methods.o
 
 default: $(TARGETS)
 	ar cr libLogics.a $(TARGETS)

@@ -22,18 +22,19 @@ public:
 
     ~Graphics();
 
-    void init();
+    void init(std::map<std::string, Object*> &Objects);
     void draw();
+    void load_object(const std::string name, Object *obj);
 
     SDL_Texture *create_texture(const std::string path);
-    void         load_texture(const std::string name, SDL_Texture *texture);
 
 protected:
-    std::map<std::string, SDL_Texture*> textures;
+    Point viewpoint;
 
     SDL_Window   *window   = nullptr;
     SDL_Renderer *renderer = nullptr;
 
+    std::map<std::string, Object*> Objects;
 private:
     int flags = 0;
 

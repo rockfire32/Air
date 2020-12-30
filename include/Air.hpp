@@ -2,7 +2,6 @@
 #define AIR_ENGINE_HPP
 
 #include <map>
-#include <memory>
 #include <string>
 #include <iostream>
 
@@ -19,7 +18,7 @@ public:
     Air_Engine();
     ~Air_Engine();
 
-    int init();
+    int  init();
     void loop();
 
     void create_object(const std::string name);

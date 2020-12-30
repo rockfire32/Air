@@ -4,7 +4,7 @@ int Air::Air_Engine::init()
 {
     try
     {
-        Graphics_module.init();
+        Graphics_module.init(Objects);
     }
     catch (std::string err)
     {
@@ -17,7 +17,7 @@ int Air::Air_Engine::init()
 
 void Air::Air_Engine::loop()
 {
-    while ( Logics_module.GetStatus() )
+    while ( Logics_module.get_status() )
     {
         Logics_module.events();
         Graphics_module.draw();
@@ -53,7 +53,7 @@ void Air::Air_Engine::load_texture(const std::string name, const std::string pat
 
     try
     {
-        Objects[name]->SetTexture(Graphics_module.create_texture(path));
+        Objects[name]->set_texture(Graphics_module.create_texture(path));
     }
     catch (const std::string &path)
     {
@@ -68,5 +68,5 @@ void Air::Air_Engine::make_drawable(const std::string name)
         return ;
     }
 
-    Graphics_module.load_texture(name, Objects[name]->GetTexture());
+    Graphics_module.load_object(name, Objects[name]);
 }

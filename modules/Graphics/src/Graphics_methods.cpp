@@ -1,7 +1,9 @@
 #include <Graphics.hpp>
 
-void Air::Graphics::init()
+void Air::Graphics::init(std::map<std::string, Object*> &Objects)
 {
+    this->Objects = Objects;
+
     if ( SDL_Init( SDL_INIT_VIDEO ) != 0 )
     {
         std::cerr << SDL_GetError() << std::endl;
@@ -23,12 +25,16 @@ void Air::Graphics::init()
 
 void Air::Graphics::draw()
 {
-    std::map<std::string, SDL_Texture*>::iterator iter;
+    SDL_Rect Texture;
+
+    Texture.x = 0; Texture.y = 0;
+    Texture.h = 32; Texture.w = 32;
 
     SDL_RenderClear(renderer);
 
-    for ( iter = textures.begin(); iter != textures.end(); iter++ ) {
-        SDL_RenderCopy(renderer, iter->second, NULL, NULL);
+    for ( auto iter = Objects.begin(); iter != Objects.end(); iter++ )
+    {
+        SDL_RenderCopy(renderer, iter->second->get_texture(), &Texture, &Texture);
     }
 
     SDL_RenderPresent(renderer);
@@ -54,6 +60,11 @@ SDL_Texture *Air::Graphics::create_texture(const std::string path)
     return Texture;
 }
 
-void Air::Graphics::load_texture(const std::string name, SDL_Texture *texture) {
-    textures[name] = texture;
+void Air::Graphics::load_object(const std::string name, Object *obj)
+{
+    if ( Objects.count(name) > 0 ) {
+        return ;
+    }
+
+    Objects[name] = obj;
 }

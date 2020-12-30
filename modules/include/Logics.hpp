@@ -6,6 +6,8 @@
 namespace Air
 {
 
+void default_f();
+
 class Logics
 {
 public:
@@ -13,11 +15,17 @@ public:
     ~Logics();
 
     void events();
-    bool GetStatus();
+    bool get_status();
 
-protected:
-    bool      status = true;
+    void set_mouse_handler(void (*f)());
+    void set_keyboard_handler(void (*f)());
+
+private:
+    bool status = true;
     SDL_Event event;
+
+    void (*mouse)()    = default_f;
+    void (*keyboard)() = default_f;
 };
 
 }

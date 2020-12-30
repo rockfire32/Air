@@ -7,20 +7,32 @@
 namespace Air
 {
 
-class Object
+class Point
+{
+public:
+    Point();
+    ~Point();
+
+    //   Position
+    void set_position(uint32_t x, uint32_t y);
+    void get_position(uint32_t &x, uint32_t &y);
+
+protected:
+    uint32_t x = 0,
+             y = 0;
+};
+
+class Object : public Point
 {
 public:
     Object();
     ~Object();
 
-    void         SetTexture(SDL_Texture *texture);
-    SDL_Texture *GetTexture();
-
-    void SetPosition(uint32_t x, uint32_t y);
-    void GetPosition(uint32_t &x, uint32_t &y);
+    //   Texture
+    void         set_texture(SDL_Texture *texture);
+    SDL_Texture *get_texture();
 
 protected:
-    uint32_t     x = 0, y = 0;
     SDL_Texture *texture = nullptr;
 };
 

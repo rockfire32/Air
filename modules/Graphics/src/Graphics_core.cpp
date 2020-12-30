@@ -3,24 +3,20 @@
 Air::Graphics::Graphics()
 {
     flags = IMG_INIT_PNG;
+    viewpoint.set_position(0, 0);
 }
 
 Air::Graphics::Graphics(uint16_t W, uint16_t H)
 {
+    flags = IMG_INIT_PNG;
+    viewpoint.set_position(0, 0);
+
     this->W = W;
     this->H = H;
 }
 
 Air::Graphics::~Graphics()
 {
-    std::map<std::string, SDL_Texture*>::iterator iter;
-
-    for ( iter = textures.begin(); iter != textures.end(); iter++ ) {
-        if ( iter->second != nullptr ) {
-            SDL_DestroyTexture(iter->second);
-        }
-    }
-
     if ( renderer != nullptr ) {
         SDL_DestroyRenderer(renderer);
     }

@@ -4,7 +4,7 @@ CXXFLAGS=-Wall -Wextra -pedantic -O3 -m64
 LIBS    = `pkg-config --libs sdl2 SDL2_image`
 VPATH   = src/
 INCLUDE = -Iinclude
-TARGETS = Object.o
+TARGETS = Object_core.o Object_methods.o
 
 default: $(TARGETS)
 	ar cr libObject.a $(TARGETS)
