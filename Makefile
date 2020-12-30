@@ -2,7 +2,7 @@ CXX=g++
 CXXFLAGS=-Wall -Wextra -pedantic -O3 -m64
 
 LIBS += `pkg-config --libs sdl2 SDL2_image`
-LIBS += -L. -lGraphics -lLogics -lObject -lboost_system
+LIBS += -L. -lGraphics -lLogics -lObject
 
 VPATH   = src/
 INCLUDE = -Iinclude -Imodules/include
