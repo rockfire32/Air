@@ -21,6 +21,30 @@ void Air::Graphics::init()
     }
 }
 
+void Air::Graphics::init(uint16_t W, uint16_t H)
+{
+    this->W = W;
+    this->H = H;
+
+    if ( SDL_Init( SDL_INIT_VIDEO ) != 0 )
+    {
+        std::cerr << SDL_GetError() << std::endl;
+        throw SDL_INIT_ERROR;
+    }
+
+    if ( SDL_CreateWindowAndRenderer(W, H, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC, &window, &renderer) != 0 )
+    {
+        std::cerr << SDL_GetError() << std::endl;
+        throw SDL_CREATE_WINDOW_ERROR;
+    }
+
+    if ( !(IMG_Init(flags) & flags ))
+    {
+        std::cerr << IMG_GetError << std::endl;
+        throw IMG_INIT_ERROR;
+    }
+}
+
 void Air::Graphics::draw()
 {
     SDL_Rect Texture;

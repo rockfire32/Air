@@ -6,7 +6,7 @@ LIBS += -L. -lGraphics -lLogics -lObject
 
 VPATH   = src/
 INCLUDE = -Iinclude -Imodules/include
-TARGETS = Air_core.o Air_methods.o Air_info.o
+TARGETS = Air_core.o Air_methods.o
 
 default: modules-cp $(TARGETS)
 	$(CXX) $(CXXFLAGS) --shared $(TARGETS) -o AirEngine.so $(INCLUDE) $(LIBS)

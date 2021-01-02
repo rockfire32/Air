@@ -18,7 +18,9 @@ public:
     Air_Engine();
     ~Air_Engine();
 
-    int  init();
+    int init();
+    int init(uint16_t W, uint16_t H);
+
     void loop();
 
     void create_object(const std::string name, uint8_t texture_size, bool animated);
@@ -26,9 +28,6 @@ public:
 
     void load_texture(const std::string name, const std::string path);
     void make_drawable(const std::string name);
-
-    //    Debug & Info
-    void info_object();
 
 protected:
     std::map<std::string, Object*> Objects;

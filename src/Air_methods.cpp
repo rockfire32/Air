@@ -15,6 +15,21 @@ int Air::Air_Engine::init()
     return 0;
 }
 
+int Air::Air_Engine::init(uint16_t W, uint16_t H)
+{
+    try
+    {
+        Graphics_module.init(W, H);
+    }
+    catch (std::string err)
+    {
+        std::cerr << err << std::endl;
+        return -1;
+    }
+
+    return 0;
+}
+
 void Air::Air_Engine::loop()
 {
     while ( Logics_module.get_status() )

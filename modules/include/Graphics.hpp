@@ -18,11 +18,11 @@ class Graphics
 {
 public:
     Graphics();
-    Graphics(uint16_t W, uint16_t H);
-
     ~Graphics();
 
     void init();
+    void init(uint16_t W, uint16_t H);
+
     void draw();
     void load_object(const std::string name, Object *obj);
 

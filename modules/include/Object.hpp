@@ -4,10 +4,7 @@
 #include <cstdint>
 #include <SDL2/SDL.h>
 
-namespace Air
-{
-
-enum class OBJECT_SIZES
+enum OBJECT_SIZES
 {
     SIZE_32X32 = 0,
     SIZE_32X64    ,
@@ -15,6 +12,8 @@ enum class OBJECT_SIZES
     SIZE_32x128   ,
 };
 
+namespace Air
+{
 
 class Point
 {
