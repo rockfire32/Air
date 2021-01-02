@@ -21,7 +21,7 @@ public:
     int  init();
     void loop();
 
-    void create_object(const std::string name);
+    void create_object(const std::string name, uint8_t texture_size, bool animated);
     void remove_object(const std::string name);
 
     void load_texture(const std::string name, const std::string path);

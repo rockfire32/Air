@@ -22,7 +22,7 @@ public:
 
     ~Graphics();
 
-    void init(std::map<std::string, Object*> &Objects);
+    void init();
     void draw();
     void load_object(const std::string name, Object *obj);
 

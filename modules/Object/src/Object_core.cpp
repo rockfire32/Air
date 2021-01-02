@@ -1,7 +1,10 @@
 #include <Object.hpp>
 
-//   Air::Object
+//   Air::Point
+Air::Point::Point() { }
+Air::Point::~Point() { }
 
+//   Air::Object
 Air::Object::Object() { }
 
 Air::Object::~Object()
@@ -10,8 +13,3 @@ Air::Object::~Object()
         SDL_DestroyTexture(texture);
     }
 }
-
-//   Air::Point
-
-Air::Point::Point() { }
-Air::Point::~Point() { }

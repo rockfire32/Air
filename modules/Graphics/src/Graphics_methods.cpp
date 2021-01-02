@@ -1,9 +1,7 @@
 #include <Graphics.hpp>
 
-void Air::Graphics::init(std::map<std::string, Object*> &Objects)
+void Air::Graphics::init()
 {
-    this->Objects = Objects;
-
     if ( SDL_Init( SDL_INIT_VIDEO ) != 0 )
     {
         std::cerr << SDL_GetError() << std::endl;

@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-Wall -Wextra -pedantic -O3 -m64
+CXXFLAGS=-Wall -Wextra -Weffc++ -pedantic -O3 -m64
 
 LIBS += `pkg-config --libs sdl2 SDL2_image`
 LIBS += -L. -lGraphics -lLogics -lObject

@@ -4,7 +4,7 @@ int Air::Air_Engine::init()
 {
     try
     {
-        Graphics_module.init(Objects);
+        Graphics_module.init();
     }
     catch (std::string err)
     {
@@ -24,13 +24,14 @@ void Air::Air_Engine::loop()
     }
 }
 
-void Air::Air_Engine::create_object(const std::string name)
+void Air::Air_Engine::create_object(const std::string name, uint8_t texture_size, bool animated)
 {
     if ( Objects.count(name) > 0 ) {
         return ;
     }
 
     Objects[name] = new Object;
+    Objects[name]->init(texture_size, animated);
 }
 
 void Air::Air_Engine::remove_object(const std::string name)
