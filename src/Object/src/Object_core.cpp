@@ -1,10 +1,5 @@
 #include <Object.hpp>
 
-//   Air::Point
-Air::Point::Point() { }
-Air::Point::~Point() { }
-
-//   Air::Object
 Air::Object::Object() { }
 
 Air::Object::~Object()

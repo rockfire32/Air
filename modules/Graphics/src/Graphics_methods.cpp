@@ -47,17 +47,9 @@ void Air::Graphics::init(uint16_t W, uint16_t H)
 
 void Air::Graphics::draw()
 {
-    SDL_Rect Texture;
-
-    Texture.x = 0; Texture.y = 0;
-    Texture.h = 32; Texture.w = 32;
-
     SDL_RenderClear(renderer);
 
-    for ( auto iter = Objects.begin(); iter != Objects.end(); iter++ )
-    {
-        SDL_RenderCopy(renderer, iter->second->get_texture(), &Texture, &Texture);
-    }
+    draw_objects();
 
     SDL_RenderPresent(renderer);
 }
@@ -89,4 +81,9 @@ void Air::Graphics::load_object(const std::string name, Object *obj)
     }
 
     Objects[name] = obj;
+}
+
+void Air::Graphics::draw_objects()
+{
+
 }

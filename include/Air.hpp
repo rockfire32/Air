@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 
+#include <Vector.hpp>
 #include <Object.hpp>
 #include <Logics.hpp>
 #include <Graphics.hpp>

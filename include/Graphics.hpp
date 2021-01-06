@@ -40,6 +40,8 @@ private:
 
     uint16_t W = 360,
              H = 240;
+
+    void draw_objects();
 };
 
 }

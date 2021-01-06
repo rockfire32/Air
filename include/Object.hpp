@@ -2,6 +2,7 @@
 #define AIR_OBJECT_HPP
 
 #include <cstdint>
+#include <Point.hpp>
 #include <SDL2/SDL.h>
 
 enum OBJECT_SIZES
@@ -15,22 +16,6 @@ enum OBJECT_SIZES
 namespace Air
 {
 
-class Point
-{
-public:
-    Point();
-    ~Point();
-
-    //   Position
-    void set_position(uint32_t x, uint32_t y);
-    void get_position(uint32_t &x, uint32_t &y);
-
-protected:
-    uint32_t x = 0,
-             y = 0;
-};
-
-
 class Object : public Point
 {
 public:
@@ -40,12 +25,13 @@ public:
     void init(uint8_t texture_size, bool animated);
 
     //   Texture
-    void         set_texture(SDL_Texture *texture);
+    void get_texture_size(uint32_t &h, uint32_t &w);
+    void set_texture(SDL_Texture *texture);
     SDL_Texture *get_texture();
 
 protected:
     bool animated = false;
-    uint8_t h = 0, w = 0;
+    uint32_t h = 0, w = 0;
 
     SDL_Texture *texture = nullptr;
 };

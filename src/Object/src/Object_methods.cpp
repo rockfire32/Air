@@ -31,6 +31,12 @@ void Air::Object::init(uint8_t size, bool animated)
     }
 }
 
+void Air::Object::get_texture_size(uint32_t &h, uint32_t &w)
+{
+    h = this->h;
+    w = this->w;
+}
+
 void Air::Object::set_texture(SDL_Texture *texture) {
     this->texture = texture;
 }
