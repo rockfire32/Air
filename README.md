@@ -13,7 +13,7 @@ Usage:
 
     try
     {
-    	// Load texture for object
+        // Load texture for object
         Eng.load_texture("Castle0", "default.png");
     }
     catch (const std::string &incorrect_path) {
